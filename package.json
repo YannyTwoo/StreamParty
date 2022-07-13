@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon serverSession.js",
+    "start": "node serverSession.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,9 +14,11 @@
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mysql2": "^2.3.3",
     "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "uuid": "^8.3.2"
   }
 }

@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Index.css" />
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="popup-screen">
+        <div class="popup-box">
+            <i class="fas fa-times close-btn"></i>
+            <form class="log-form">
+                <h2>LOGIN FORM</h2>
+                <label class="label">Username </label>
+                <input type="text" name="username" id="username" placeholder="Enter Name" required /><br><br>
+                <label class="label">Password </label>
+                <input type="text" name="password" id="password" placeholder="Enter Password" required /><br><br>
+                <!-- <input type="submit" class="btn-primary" value="SUBMIT"  name="submit"> -->
+                <div>
+                    <button class="btn-primary log-submit-btn">Login</button>
+                    <button class="btn-primary reg-submit-btn">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        logSubmit = document.getElementById('log-submit-btn');
+        regSubmit = document.getElementById('reg-submit-btn');
+
+        submit.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            uname = document.getElementById('username');
+            pword = document.getElementById('password');
+
+            fetch('login route', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "uname": uname.value,
+                    "pword": pword.value
+                })
+            });
+        })
+        regSubmit.addEventListener('click', (e)=>{
+            e.preventDefault();
+
+            uname = document.getElementById('username');
+            pword = document.getElementById('password');
+
+            fetch('registration route', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "uname": uname.value,
+                    "pword": pword.value
+                })
+            })
+            .then(response => response.json())
+            .then(data =>{
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+
+</html>
