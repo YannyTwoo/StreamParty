@@ -1,16 +1,34 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="Index.css" />
-        <title>Title</title>
+<%- include('header') -%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+    <script src="chatbox.js" defer></script>
     </head>
+
+
     <body>
 
         <header>
             <h1>Stream Party</h1>
         </header>
+        <div class="centralcentral">
+            <% if(streamlink =='' ){ %>
+                <div id="nostream">
+                    There is no stream available at this moment
+                </div>
+            <% }else {%>
+                <div id="yesstream" class="centralcentral">
+                    <iframe width="1190" height="669" src="https://www.youtube.com/embed/dOufWtK7Q5s" title="FPX vs Fnatic - VCT Masters Copenhagen   2022 – Bracket Day 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            <% } %>
+        </div>
+        <div>
+            have this element be populated using js. if req sent from backend then question should popup and rest of
+            screen should be slightly darker
+        </div>
+        <div id="chat-box-wrapper-all"></div>
 
-        <script src="Index.js"></script>
+        <div id="logoutbutton">
+            <a href='/thankyou'>Logout</a>
+        </div>
     </body>
-</html>
+
+    </html>
